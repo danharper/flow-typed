@@ -34,11 +34,23 @@ const customClasses = () => (
 );
 
 
+const customClassesEmptyTransitionName = () => (
+  <ReactCSSTransitionGroup
+    transitionName={{}}
+    transitionEnterTimeout={500}
+    transitionLeaveTimeout={300}>
+    <div />
+  </ReactCSSTransitionGroup>
+);
+
+
 const customClassesFail = () => (
 
   <ReactCSSTransitionGroup
     // $ExpectError
-    transitionName={{}}
+    transitionName={{
+      enter: 2
+    }}
     transitionEnterTimeout={500}
     transitionLeaveTimeout={300}>
     <div />
